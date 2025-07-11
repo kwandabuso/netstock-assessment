@@ -122,12 +122,9 @@ export class HomePage {
     }
   }
   async isHomePageDisplayed() {
-    const isHeroDisplayed = await page.isVisible(this.hero, {
-      timeout: 200000,
-    });
-    console.log(isHeroDisplayed);
 
-    expect(isHeroDisplayed).toBeFalsy();
+       await expect(page.locator(this.hero)).toBeVisible();
+
   }
   async isRoomsDisplayed() {
     const isRoomsDisplayed = await page.isVisible(this.rooms);
@@ -135,14 +132,12 @@ export class HomePage {
   }
 
   async isSelectedRoomsDisplayed() {
-    await page.pause();
-    const isRoomDisplayed = await page.isVisible(this.SelectedRoomImg);
-    expect(isRoomDisplayed).toBeTruthy();
+    await expect(page.locator(this.SelectedRoomImg)).toBeVisible();
+  
   }
 
   async clickAvailability() {
     await page.click(this.checkAvailability);
-    //check if results are back
   }
   async clickBookNow() {
     await page.click(this.bookNow);

@@ -47,7 +47,6 @@ export class ReservePage {
   }
 
   async validateSuccessMessage() {
-    const isSuccess = await page.isVisible(this.success);
-    expect(isSuccess).toBeTruthy();
+    await expect(page.locator(this.success)).toBeVisible();
   }
 }
