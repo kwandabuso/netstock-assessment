@@ -62,3 +62,6 @@ When("the user clicks on Reserve now button", async function () {
 Then("a reservation  is done successfully", async function () {
   await reservePage.validateSuccessMessage();
 });
+Then("error is displayed", async function () {
+  await homePage.validateErrorMessage();
+});
