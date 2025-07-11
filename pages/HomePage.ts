@@ -21,6 +21,7 @@ export class HomePage {
   public success = "//h2[contains(@class,'card-title')]";
   public rooms = "//section[@id='rooms']//div[contains(@class,'col')]";
   public SelectedRoomImg = "//img[@alt='Room Image']";
+  public emailMissingErrorMessage = "//div[@class='alert alert-danger']//li";
 
   async selectCheckinDate() {
     await page.click(this.checkin);
@@ -122,9 +123,7 @@ export class HomePage {
     }
   }
   async isHomePageDisplayed() {
-
-       await expect(page.locator(this.hero)).toBeVisible();
-
+    await expect(page.locator(this.hero)).toBeVisible();
   }
   async isRoomsDisplayed() {
     const isRoomsDisplayed = await page.isVisible(this.rooms);
@@ -133,7 +132,6 @@ export class HomePage {
 
   async isSelectedRoomsDisplayed() {
     await expect(page.locator(this.SelectedRoomImg)).toBeVisible();
-  
   }
 
   async clickAvailability() {
@@ -148,5 +146,9 @@ export class HomePage {
   async clickReserveNow() {
     await page.click(this.reserve);
   }
-
+  async validateErrorMessage() {
+    await expect(page.locator(this.emailMissingErrorMessage)).toHaveText(
+      "must not be empty"
+    );
+  }
 }
