@@ -2,7 +2,9 @@
   "name": "netstock",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "web": "cucumber-js test --tags @web"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -12,6 +14,14 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.54.0",
-    "@types/node": "^24.0.13"
+    "@types/node": "^24.0.13",
+    "@cucumber/cucumber": "^11.2.0",
+    "@playwright/test": "^1.51.1",
+    "@types/node": "^22.13.14",
+    "allure-playwright": "^3.2.1",
+    "cucumber-html-reporter": "^7.2.0",
+    "ts-node": "^10.9.2",
+    "allure-cucumberjs": "^3.2.1",
+    "allure-js-commons": "^3.2.1"
   }
 }
