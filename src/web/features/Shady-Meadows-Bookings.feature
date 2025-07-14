@@ -1,4 +1,5 @@
 
+@web
 Feature: Shady meadows bookings
 
   Scenario: validate booking using valid data
@@ -17,7 +18,6 @@ Feature: Shady meadows bookings
     And the user clicks on Reserve now button
     Then a reservation  is done successfully
 
-@web
   Scenario: validate error when booking with no email
     Given the user is on the Shady Meadows B&B page
     When the user selects checkin date

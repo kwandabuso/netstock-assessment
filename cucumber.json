@@ -15,7 +15,6 @@
             "ts-node/register"
         ],
         "format": [
-            "json:test-results/api/cucumber-report.json",
             "json:test-results/web/cucumber-report.json",
             "html:test-results/web/cucumber-report.html"
           ]

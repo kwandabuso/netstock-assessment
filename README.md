@@ -1,7 +1,10 @@
-The tests are divided into two sections: Web and API. Each section contains subfolders for feature files and step definitions. To run the tests, use the following commands:
+Web: To run the tests, use the following commands:
+commands to run to get setup:
 
-Run API tests: npm run api
+- npm install
 
-Run Web tests: npm run web
+- npm install playwright
 
-after test run a html report is generated at \Securitease-automation\test-results\web\cucumber-report.html
+- Run Web tests: npm run web
+
+after test run a html report is generated at test-results\web\cucumber-report.html
